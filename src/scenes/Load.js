@@ -8,9 +8,14 @@ class Load extends Phaser.Scene {
         this.load.path = "./assets/"
         this.load.image("beach", "beachBackground.png")
         this.load.image("soccerBall", "soccer_ball.png")
-        //this.load.image("player", "kiwi.png")    
+        this.load.image("crab", "kiwi.png")    
         //this.load.image("sprite", "spritesheet.png")
         this.load.atlas("player", "spritesheet.png", "walking.json")
+
+        this.load.audio("hit1", "hit1.wav")
+        this.load.audio("hit2", "hit2.wav")
+        this.load.audio("selection", "selection.wav")
+
     }
 
 
