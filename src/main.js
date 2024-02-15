@@ -1,3 +1,8 @@
+// Acer Cristea
+// Game Title: Dribble Master
+// Hours Spent: Approximately 16
+// 
+
 'use strict'
 
 // define and configure main Phaser game object
