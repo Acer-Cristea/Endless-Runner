@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
     init() {
 
         this.WEAK_SHOT_X_VELOCITY = 100
-        this.WEAK_SHOT_Y_VELOCITY = -500
+        this.WEAK_SHOT_Y_VELOCITY = -600
 
         this.POWER_SHOT_X_VELOCITY = 15
         this.POWER_SHOT_Y_VELOCITY = 15
@@ -27,7 +27,7 @@ class Play extends Phaser.Scene {
     create() {
         this.beach = this.add.tileSprite(0,0,640,870,"beach").setOrigin(0)
 
-        this.crab1 = this.physics.add.sprite(width, 650 , "crab")
+        this.crab1 = this.physics.add.sprite(width, 650, "crab")
         this.crab1.setVelocityX(-100)
         this.crab1.body.setCircle(this.crab1.width/2)
         this.crab1.body.setImmovable(true)
@@ -39,16 +39,16 @@ class Play extends Phaser.Scene {
         this.crab2.body.setImmovable(true)
 
         this.crab3 = this.physics.add.sprite(width, Phaser.Math.Between(500, 810), "crab")
-        this.crab3.body.setCircle(this.crab3.width/2)
         this.crab3.setVelocityX(-200)
+        this.crab3.body.setCircle(this.crab3.width/2)
         this.crab3.body.setImmovable(true)
 
 
-        this.soccerBall = this.physics.add.sprite(width/2, height-70,"soccerBall")
+        this.soccerBall = this.physics.add.sprite(width/2, height-100,"soccerBall")
         this.soccerBall.body.setCircle(this.soccerBall.width/2)
         this.soccerBall.body.setBounce(0.5)
         this.soccerBall.body.setCollideWorldBounds(true) //why doesn't this work
-        this.soccerBall.body.setDamping(true).setDrag(0.5)
+        this.soccerBall.body.setDamping(true).setDrag(0.3)
 
         this.gameOver = false
 
@@ -147,8 +147,8 @@ class Play extends Phaser.Scene {
 
         this.scoreText.text = this.score
 
-        this.beach.tilePositionY -= 3
-        this.soccerBall.y += 3
+        this.beach.tilePositionY -= 2
+        this.soccerBall.y += 0.5
 
 
         if (this.crab1.x <= 0) {

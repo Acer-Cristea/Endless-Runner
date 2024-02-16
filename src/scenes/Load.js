@@ -9,7 +9,6 @@ class Load extends Phaser.Scene {
         this.load.image("beach", "beachBackground.png")
         this.load.image("soccerBall", "soccer_ball.png")
         this.load.image("crab", "crab.png")    
-        //this.load.image("sprite", "spritesheet.png")
         this.load.atlas("player", "spritesheet.png", "walking.json")
 
         this.load.audio("hit1", "hit1.wav")
