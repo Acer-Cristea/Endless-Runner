@@ -11,8 +11,12 @@ class Load extends Phaser.Scene {
         this.load.image("crab", "crab.png")    
         this.load.atlas("player", "spritesheet.png", "walking.json")
 
+        this.load.image("rock", "rock.png")
+        this.load.image("get_beached", "get_beached.png")
+
         this.load.image("title", "title.png")
 
+        this.load.audio("dead", "dead.wav")
         this.load.audio("hit1", "hit1.wav")
         this.load.audio("hit2", "hit2.wav")
         this.load.audio("selection", "selection.wav")

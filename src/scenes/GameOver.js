@@ -5,24 +5,25 @@ class GameOver extends Phaser.Scene {
 
     create() {
 
-        let gameOverConfig = {
-            fontFamily: "Courier",
-            fontSize: "50px",
-            backgroundColor: "#FFFFFF",
-            color: "#FF0000",
-            align: "center",
+        let menuConfig = {
+            fontFamily: "Comic Sans MS",
+            fontSize: "35px",
+            color: "#FFFFFF",
+            align: "right",
             padding: {
               top: 5,
               bottom: 5,
             },
-          }
+            fixedWidth: 0
+        }
+
+        this.add.image(0,-40,"get_beached").setOrigin(0)
 
 
-
-        this.add.text(game.config.width/2, game.config.height/2 + 30, "Press (R) to Restart",
+        this.add.text(width/2, height/2 + 30, "Press (R) to Restart",
         menuConfig).setOrigin(0.5)
 
-        this.add.text(game.config.width/2, game.config.height/2 + 100, "Press UP ARROW to Main Menu",
+        this.add.text(width/2, height/2 + 100, "Press ↑ to Main Menu",
         menuConfig).setOrigin(0.5)
 
         keyRESET = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R)

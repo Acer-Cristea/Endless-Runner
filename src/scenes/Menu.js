@@ -21,10 +21,10 @@ class Menu extends Phaser.Scene {
       
         this.add.image(-10,-150,"title").setOrigin(0)
 
-        this.add.text(game.config.width/2, game.config.height/2 + 200, "Press UP ARROW to Start",
+        this.add.text(game.config.width/2, game.config.height/2 + 200, "Press ↑ to Start",
         menuConfig).setOrigin(0.5)
 
-        this.add.text(game.config.width/2, game.config.height/2 + 150, "Use and to start",
+        this.add.text(game.config.width/2, game.config.height/2 + 150, "Use ←→ arrows to move",
         menuConfig).setOrigin(0.5)
 
         menuConfig.fontSize = "28px"
