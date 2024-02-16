@@ -260,7 +260,7 @@ class Play extends Phaser.Scene {
         this.healthText.text = "Health: " + this.health
 
         this.beach.tilePositionY -= 8
-        this.soccerBall.y += 2
+        this.soccerBall.y += 4
 
         this.rock1.y += 6
         this.rock2.y += 4
