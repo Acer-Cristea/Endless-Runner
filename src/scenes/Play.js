@@ -148,7 +148,7 @@ class Play extends Phaser.Scene {
         this.scoreText.text = this.score
 
         this.beach.tilePositionY -= 2
-        this.soccerBall.y += 0.5
+        this.soccerBall.y += 2
 
 
         if (this.crab1.x <= 0) {

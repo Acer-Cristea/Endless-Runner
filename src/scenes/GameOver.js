@@ -17,8 +17,13 @@ class GameOver extends Phaser.Scene {
             },
           }
 
-        let gameOverText = this.add.text(width/2, height/2-20, "Game Over", gameOverConfig).setOrigin(0.5)
 
+
+        this.add.text(game.config.width/2, game.config.height/2 + 30, "Press (R) to Restart",
+        menuConfig).setOrigin(0.5)
+
+        this.add.text(game.config.width/2, game.config.height/2 + 100, "Press UP ARROW to Main Menu",
+        menuConfig).setOrigin(0.5)
 
         keyRESET = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R)
         keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
@@ -29,12 +34,14 @@ class GameOver extends Phaser.Scene {
     update() {
 
         if(Phaser.Input.Keyboard.JustDown(keyRESET)){
-            //this.backgroundMusic.stop();
+            this.sound.play("selection")
+
             this.scene.start("playScene")
         }
 
         if(Phaser.Input.Keyboard.JustDown(keyUP)){
-            //this.backgroundMusic.stop();
+            this.sound.play("selection")
+
             this.scene.start("menuScene")
         }
 

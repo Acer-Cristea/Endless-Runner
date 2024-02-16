@@ -19,11 +19,31 @@ class Menu extends Phaser.Scene {
 
         keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
       
-        this.add.text(game.config.width/2, game.config.height/2, "Dribble Master",
+        this.add.image(-10,-150,"title").setOrigin(0)
+
+        this.add.text(game.config.width/2, game.config.height/2 + 200, "Press UP ARROW to Start",
         menuConfig).setOrigin(0.5)
 
-        this.add.text(game.config.width/2, game.config.height/2 + 30, "Press UP ARROW to Start",
+        this.add.text(game.config.width/2, game.config.height/2 + 150, "Use and to start",
         menuConfig).setOrigin(0.5)
+
+        menuConfig.fontSize = "28px"
+
+        this.add.text(game.config.width/2, game.config.height/2, "Don't let the ball get passed you!",
+        menuConfig).setOrigin(0.5)
+
+        this.add.text(game.config.width/2, game.config.height/2 + 30, "Be careful of the rocks in the beach!",
+        menuConfig).setOrigin(0.5)
+
+        this.add.text(game.config.width/2, game.config.height/2 + 380, "Made by Acer Cristea",
+        menuConfig).setOrigin(0.5)
+
+        menuConfig.fontSize = "10px"
+
+
+        this.add.text(game.config.width/2, game.config.height/2 + 410, "Used Uppbeat for backround music",
+        menuConfig).setOrigin(0.5)
+
     }
 
     update() {
