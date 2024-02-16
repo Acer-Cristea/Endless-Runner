@@ -17,7 +17,7 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
 
-        cursors = this.input.keyboard.createCursorKeys()  
+        keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
       
         this.add.text(game.config.width/2, game.config.height/2, "Dribble Master",
         menuConfig).setOrigin(0.5)
@@ -27,7 +27,7 @@ class Menu extends Phaser.Scene {
     }
 
     update() {
-        if (Phaser.Input.Keyboard.JustDown(cursors.up)) {
+        if (Phaser.Input.Keyboard.JustDown(keyUP)) {
 
             this.sound.play("selection")
 

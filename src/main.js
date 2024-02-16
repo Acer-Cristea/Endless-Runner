@@ -26,13 +26,12 @@ let config = {
             //}
         }
     },
-    scene: [ Load, Menu, Play]
+    scene: [ Load, Menu, Play, GameOver]
 }
 
 let game = new Phaser.Game(config)
 
-let cursors
 
-let keyLEFT, keyRIGHT, keyUP, keyDOWN
+let keyLEFT, keyRIGHT, keyUP, keyDOWN, keyRESET
 
 let { width, height } = game.config
