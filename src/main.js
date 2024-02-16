@@ -1,7 +1,11 @@
 // Acer Cristea
 // Game Title: Dribble Master
-// Hours Spent: Approximately 16
-// 
+// Hours Spent: Approximately 27
+// Creative Tilt:
+//  In my Dribble Master I use multiple collision detectors to create a pinball like experience. 
+//  I'm proud of the way I kept track of time and implemented the collision for objects only at that time. 
+//  I also like the way I twisted the idea from the Golf in class example to create a cool and very different experience.
+//  I'm proud of the artwork which took way too long to make, and the overall idea of having to keep track of and control multiple things in an Endless Runner
 
 'use strict'
 
@@ -19,11 +23,8 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
-            //gravity: {
-            //    x: 0,
-            //    y: 0
-            //}
+            debug: false,
+
         }
     },
     scene: [ Load, Menu, Play, GameOver]

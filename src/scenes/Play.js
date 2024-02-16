@@ -15,6 +15,8 @@ class Play extends Phaser.Scene {
 
         this.player_collision = false
 
+        this.startTime = this.time.now
+
         this.score = 0
         this.scoreText
         
@@ -311,13 +313,13 @@ class Play extends Phaser.Scene {
             this.rock4.x = Phaser.Math.Between(0, 640)
         } 
         
-        if(this.time.now >= 30000){
+        if(this.time.now - this.startTime >= 30000){
             this.rock3collider.active = true
             this.rock3.setVisible(true)
             this.rock3.setActive(true)
         }
 
-        if(this.time.now >= 30000){
+        if(this.time.now - this.startTime >= 30000){
             this.crab4collider.active = true
             this.crab4.setVisible(true)
             this.crab4.setActive(true)
