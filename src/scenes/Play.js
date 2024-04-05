@@ -43,7 +43,6 @@ class Play extends Phaser.Scene {
         this.crab1.body.setCircle(this.crab1.width/2)
         this.crab1.body.setImmovable(true)
 
-//Phaser.Math.Between(500, 810)
         this.crab2 = this.physics.add.sprite(width, Phaser.Math.Between(500, 810), "crab")
         this.crab2.setVelocityX(-150)
         this.crab2.body.setCircle(this.crab2.width/2)
@@ -223,6 +222,24 @@ class Play extends Phaser.Scene {
 
         })
 
+        this.physics.add.collider(this.soccerBall, this.crab5, (soccerBall, crab) => {
+
+            this.score+=25
+
+            let shotDirectionX = crab.x <= this.soccerBall.x ? 1 : -1 
+            let shotDirectionY = crab.y <= this.soccerBall.y ? -1 : 1 
+
+            this.soccerBall.body.setVelocityX((this.WEAK_SHOT_X_VELOCITY)*shotDirectionX)
+            this.soccerBall.body.setVelocityY((this.WEAK_SHOT_Y_VELOCITY)*shotDirectionY)
+            let hitSounds = ["hit1", "hit2"]
+
+            let randomIndex = Math.floor(Math.random()*2)
+            let randomHit = hitSounds[randomIndex]
+      
+            this.sound.play(randomHit)
+
+        })
+
         this.physics.add.collider(this.soccerBall, this.crab6, (soccerBall, crab) => {
 
             this.score+=25
@@ -258,6 +275,7 @@ class Play extends Phaser.Scene {
             this.sound.play(randomHit)
 
         })
+
 
 
         this.crab4collider = this.physics.add.collider(this.soccerBall, this.crab4, (soccerBall, crab) => {
@@ -303,13 +321,13 @@ class Play extends Phaser.Scene {
 
         this.healthText.text = "Health: " + this.health
 
-        this.beach.tilePositionY -= 3.5
-        this.soccerBall.y += 1
+        this.beach.tilePositionY -= 4
+        this.soccerBall.y += 3
 
-        this.rock1.y += 3
-        this.rock2.y += 1
-        this.rock3.y += 2
-        this.rock4.y += 1.5
+        this.rock1.y += 4
+        this.rock2.y += 2.5
+        this.rock3.y += 3
+        this.rock4.y += 2
 
 
         if (this.crab1.x <= 0) {
